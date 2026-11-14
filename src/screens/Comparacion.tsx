@@ -87,7 +87,7 @@ export function Comparacion() {
             cancelAnimationFrame(raf.current);
             setBlend(v[0] / 100);
           }}
-          aria-label="Transition between observation A and observation B"
+          thumbLabel="Transition between observation A and observation B"
         />
         <p className="data text-xs text-ink-soft">
           A {obsA.acquisition} · B {obsB.acquisition} · blend {Math.round(blend * 100)}%

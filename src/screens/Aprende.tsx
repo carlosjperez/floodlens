@@ -17,7 +17,7 @@ export function Aprende() {
   return (
     <div className="space-y-4">
       <h2 className="font-display text-2xl font-bold">Learn</h2>
-      <p className="data text-xs text-ink-soft">
+      <p className="text-xs tabular-nums text-ink-soft">
         Exercise {idx + 1} of {DEMO_CASE.exercises.length}
       </p>
       <ExerciseCard

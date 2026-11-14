@@ -10,7 +10,7 @@ colors:
   reference: "#1f5fa6"
   newwater: "#0e8f9a"
   newwater-edge: "#064a52"
-  ambiguous: "#a06a00"
+  ambiguous: "#8a5a00"
   noteval: "#6b7280"
   select: "#101820"
   alert: "#a03e00"
@@ -100,7 +100,7 @@ A documentary palette: two neutrals for ground and panel, two inks for text, one
 
 ### Tertiary
 
-- **Ambiguous Amber** (#a06a00): amber hatch for ambiguous areas; also the synthetic-data stamp and caution notes.
+- **Ambiguous Amber** (#8a5a00): amber hatch for ambiguous areas; also the synthetic-data stamp and caution notes.
 - **Not-Evaluated Gray** (#6b7280): gray hatch for excluded zones.
 - **Alert Rust** (#a03e00): destructive actions and hard warnings only.
 

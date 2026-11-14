@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>FloodLens — demo deck</title>
+<style>
+  :root {
+    --paper: #f4f4f2; --panel: #fbfbfa; --ink: #16232e; --ink-soft: #46586a;
+    --line: #d4d7d3; --teal: #0e8f9a; --blue: #1f5fa6; --amber: #8a5a00; --alert: #a03e00;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  body { font-family: "Source Sans 3", "Source Sans Pro", -apple-system, sans-serif; color: var(--ink); }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--paper); page-break-after: always; }
+  .slide:last-child { page-break-after: auto; }
+  .dark { background: var(--ink); color: var(--paper); }
+  h1, h2 { font-family: Archivo, "Source Sans 3", sans-serif; font-weight: 700; }
+  .title { position: absolute; left: 60px; top: 50px; width: 1160px; font-size: 40px; }
+  .stamp { position: absolute; left: 60px; top: 682px; font-size: 13px; color: var(--amber); }
+  .pagenum { position: absolute; right: 60px; top: 682px; font-size: 13px; color: var(--ink-soft); }
+  .img { position: absolute; object-fit: cover; }
+  .card { position: absolute; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  .soft { color: var(--ink-soft); }
+  /* cover */
+  .cover-title { position: absolute; left: 60px; top: 150px; font-size: 59px; color: var(--paper); }
+  .cover-rule { position: absolute; left: 60px; top: 236px; width: 120px; height: 4px; background: var(--teal); }
+  .cover-sub { position: absolute; left: 60px; top: 262px; width: 560px; font-size: 27px; color: var(--paper); }
+  .cover-body { position: absolute; left: 60px; top: 330px; width: 560px; font-size: 17px; line-height: 1.5; color: #cfd8de; }
+  .cover-stamp { position: absolute; left: 60px; top: 430px; font-size: 16px; color: #cfd8de; }
+  .cover-links { position: absolute; left: 60px; top: 560px; font-size: 16px; line-height: 1.6; color: #6cc7cf; }
+  /* timeline */
+  .intro { position: absolute; left: 60px; top: 112px; width: 1160px; font-size: 19px; line-height: 1.4; }
+  .tl-line { position: absolute; left: 60px; top: 335px; width: 1160px; height: 2px; background: var(--line); }
+  .node { position: absolute; top: 280px; width: 160px; height: 110px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .node b { display: block; font-size: 17px; margin-bottom: 6px; }
+  .node span { font-size: 13px; line-height: 1.3; color: var(--ink-soft); display: block; }
+  .thesis { position: absolute; left: 60px; top: 470px; width: 1160px; font-size: 19px; line-height: 1.4; }
+  /* comparison */
+  .lede { position: absolute; left: 60px; top: 120px; width: 540px; font-size: 19px; line-height: 1.4; }
+  .obs { position: absolute; left: 60px; width: 540px; height: 70px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .obs b { font-size: 19px; display: block; }
+  .obs span { font-size: 16px; color: var(--ink-soft); }
+  .note { position: absolute; left: 60px; top: 390px; width: 540px; font-size: 16px; line-height: 1.4; }
+  .ack { position: absolute; left: 60px; top: 490px; width: 540px; height: 64px; background: rgba(160,62,0,.08); border: 1px solid var(--alert); border-radius: 8px; padding: 10px 12px; font-size: 16px; font-weight: 600; color: var(--alert); line-height: 1.35; }
+  /* evidence */
+  .panel { position: absolute; left: 60px; top: 400px; width: 640px; height: 260px; background: rgba(251,251,250,.95); border: 1px solid var(--line); border-radius: 8px; color: var(--ink); }
+  .panel h2 { position: absolute; left: 24px; top: 20px; font-size: 29px; }
+  .panel p { position: absolute; left: 24px; top: 64px; width: 592px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
+  .panel .warn { position: absolute; left: 24px; top: 196px; width: 592px; font-size: 16px; font-weight: 700; color: var(--amber); }
+  /* learn */
+  .sub { position: absolute; left: 60px; top: 112px; width: 1160px; font-size: 19px; }
+  .lesson { position: absolute; top: 180px; width: 360px; height: 330px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+  .lesson h3 { font-size: 21px; margin-bottom: 14px; }
+  .lesson p { font-size: 16px; line-height: 1.4; color: var(--ink-soft); margin-bottom: 16px; }
+  .lesson .mech { font-size: 15px; color: var(--ink); }
+  .foot { position: absolute; left: 60px; top: 540px; width: 1160px; font-size: 16px; line-height: 1.4; }
+  /* method */
+  .formula { position: absolute; left: 60px; top: 120px; width: 540px; height: 84px; background: #eceee9; border-radius: 8px; padding: 20px 16px; font-family: "SF Mono", ui-monospace, monospace; font-size: 15px; }
+  .stats { position: absolute; left: 60px; top: 224px; width: 540px; font-size: 17px; line-height: 1.4; }
+  .cited-h { position: absolute; left: 60px; top: 300px; font-size: 19px; font-weight: 700; }
+  .cited { position: absolute; left: 60px; top: 330px; width: 540px; font-size: 16px; line-height: 1.55; }
+  .limits { position: absolute; left: 60px; top: 440px; width: 540px; font-size: 16px; line-height: 1.4; }
+  /* closing */
+  .close-title { position: absolute; left: 60px; top: 120px; width: 860px; font-size: 45px; color: var(--paper); }
+  .close-sub { position: absolute; left: 60px; top: 200px; width: 760px; font-size: 21px; line-height: 1.4; color: #cfd8de; }
+  .close-links { position: absolute; left: 60px; top: 280px; font-size: 19px; line-height: 1.6; color: #6cc7cf; }
+  .close-facts { position: absolute; left: 60px; top: 380px; font-size: 16px; line-height: 1.7; color: #cfd8de; }
+  .close-stamp { position: absolute; left: 60px; top: 660px; font-size: 15px; color: #cfd8de; }
+</style>
+</head>
+<body>
+
+<section class="slide dark">
+  <img class="img" src="assets/desktop-cover.png" style="left:660px;top:180px;width:580px;height:360px;border-radius:8px" alt="FloodLens cover screen" />
+  <h1 class="cover-title">FloodLens</h1>
+  <div class="cover-rule"></div>
+  <div class="cover-sub">Reading flood water with radar</div>
+  <p class="cover-body">An educational journey with traceable radar observations. Compare two dates, read the evidence and practice interpretation. NASA Space Apps Challenge 2026 — Dancing with the SARs.</p>
+  <div class="cover-stamp">Synthetic demonstration data · React 19 · Three.js · MIT</div>
+  <div class="cover-links">https://floodlens-ev27apvmvw9.qoder.website<br/>https://github.com/carlosjperez/floodlens</div>
+</section>
+
+<section class="slide">
+  <h2 class="title">Two dates, one guided reading</h2>
+  <p class="intro soft">Radar sees through clouds and darkness. FloodLens walks six chapters from context to sources, keeping method and limitations attached to every claim.</p>
+  <div class="tl-line"></div>
+  <div class="node" style="left:60px"><b>Context</b><span>Locate the demonstration territory.</span></div>
+  <div class="node" style="left:260px"><b>Comparison</b><span>Two dates, not a film.</span></div>
+  <div class="node" style="left:460px"><b>Evidence</b><span>Three points with method and limitations.</span></div>
+  <div class="node" style="left:660px"><b>Learn</b><span>Three exercises with explanation.</span></div>
+  <div class="node" style="left:860px"><b>Summary</b><span>Concepts and corrected answers.</span></div>
+  <div class="node" style="left:1060px"><b>Sources</b><span>Full traceability of the package.</span></div>
+  <p class="thesis soft">What was not evaluated is never declared safe. Exclusions and ambiguous areas stay visible on the map and in the legend.</p>
+  <div class="stamp">Synthetic demonstration data</div><div class="pagenum">2</div>
+</section>
+
+<section class="slide">
+  <h2 class="title">Comparison: change, not a film</h2>
+  <p class="lede soft">The slider moves between two real observation dates. The blend is a labelled percentage, never a date: no interpolation is presented as a measurement.</p>
+  <div class="obs" style="top:214px"><b>Observation A · 2026-01-10</b><span>DEMO-SYNTHETIC-A · simulated HH backscatter</span></div>
+  <div class="obs" style="top:300px"><b>Observation B · 2026-01-22</b><span>DEMO-SYNTHETIC-B · simulated HH backscatter</span></div>
+  <p class="note soft">Reference, possible new water, ambiguous and not evaluated stay separate classes on the map and in the legend.</p>
+  <div class="ack">Not evaluated is not declared safe. Exclusion and ambiguity layers are always restorable.</div>
+  <img class="img" src="assets/desktop-comparison.png" style="left:640px;top:140px;width:600px;height:375px;border-radius:8px" alt="Comparison screen" />
+  <div class="stamp">Synthetic demonstration data</div><div class="pagenum">3</div>
+</section>
+
+<section class="slide dark">
+  <img class="img" src="assets/desktop-evidence.png" style="left:0;top:0;width:1280px;height:720px" alt="Evidence screen" />
+  <div class="panel">
+    <h2>Evidence with its uncertainty</h2>
+    <p>Reference water (blue), possible new water (teal), ambiguous (amber hatch) and not evaluated (grey hatch) are separate classes, each with colour and pattern.</p>
+    <div class="warn">Hidden layers trigger a visible warning: not evaluated is not declared safe.</div>
+  </div>
+  <div class="pagenum" style="color:#cfd8de">4</div>
+</section>
+
+<section class="slide">
+  <h2 class="title">Learn by being corrected</h2>
+  <p class="sub soft">Three exercises turn common radar-reading mistakes into corrected answers.</p>
+  <div class="lesson" style="left:60px">
+    <h3>1 · No water seen ≠ safe</h3>
+    <p>A zone shows no water in the image. Can it be called safe? No: sensor limits, geometry and layover can hide water. Absence of signal is not evidence of safety.</p>
+    <p class="mech">Mechanics: choose an answer, read the explanation, retry until supported by the evidence.</p>
+  </div>
+  <div class="lesson" style="left:460px">
+    <h3>2 · Footprint ≠ damage</h3>
+    <p>An element of the territory coincides with the water footprint. Does it prove damage? No: footprint shows possible extent, not impact on assets or people.</p>
+    <p class="mech">Mechanics: exposure needs ground truth and asset data the demo deliberately does not claim.</p>
+  </div>
+  <div class="lesson" style="left:860px">
+    <h3>3 · Two dates ≠ every hour</h3>
+    <p>We have images from two dates. Do we know what happened every hour? No: two snapshots bound the change; anything between them is interpolation, not observation.</p>
+    <p class="mech">Mechanics: the blend slider is labelled as a percentage, never as a timestamp.</p>
+  </div>
+  <p class="foot soft">Answers persist locally; restart clears them. Keyboard and screen-reader paths work without WebGL.</p>
+  <div class="stamp">Synthetic demonstration data</div><div class="pagenum">5</div>
+</section>
+
+<section class="slide">
+  <h2 class="title">Method and provenance</h2>
+  <div class="formula">possible new water = candidate + change − reference − invalid</div>
+  <p class="stats soft">30 m per analytical cell, never pixels. Relief is exaggerated ×6 for readability and labelled as such.</p>
+  <div class="cited-h">Cited NASA resources</div>
+  <p class="cited soft">NASA Earthdata — Intro to Synthetic Aperture Radar (SAR)<br/>NASA ARSET — remote sensing and SAR trainings<br/>NISAR Data User Guide (ASF)</p>
+  <p class="limits soft">Limitations stated in-app: exploratory reading without in-situ contrast; synthetic products labelled DEMO-SYNTHETIC; NISAR on hold, no silent substitution.</p>
+  <img class="img" src="assets/desktop-sources.png" style="left:640px;top:140px;width:600px;height:375px;border-radius:8px" alt="Sources screen" />
+  <div class="stamp">Synthetic demonstration data</div><div class="pagenum">6</div>
+</section>
+
+<section class="slide dark">
+  <h2 class="close-title">Read the water. Keep the uncertainty.</h2>
+  <p class="close-sub">An educational journey with traceable radar observations. NASA Space Apps Challenge 2026 — Dancing with the SARs.</p>
+  <div class="close-links">https://floodlens-ev27apvmvw9.qoder.website<br/>https://github.com/carlosjperez/floodlens</div>
+  <p class="close-facts">React 19 · Three.js · Zustand · Zod · Vite 7 · Tailwind 4<br/>34 unit tests + 18 end-to-end tests · MIT license<br/>Demo video 27 s · this deck 7 slides</p>
+  <img class="img" src="assets/mobile-comparison.png" style="left:980px;top:100px;width:240px;height:520px;border-radius:8px" alt="Mobile comparison screen" />
+  <div class="close-stamp">Synthetic demonstration data · Earthdata credentials stay outside browser and repository</div>
+</section>
+
+</body>
+</html>

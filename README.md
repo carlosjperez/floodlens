@@ -8,6 +8,13 @@ practice interpretation in three corrected exercises.
 Built for the **NASA Space Apps Challenge 2026** —
 [Dancing with the SARs](https://www.spaceappschallenge.org/2026/challenges/dancing-with-the-sars/).
 
+## Demo
+
+- **Live app:** https://floodlens-ev27apvmvw9.qoder.website (public, static hosting)
+- **Demo video (27 s):** [docs/demo/floodlens-demo.webm](docs/demo/floodlens-demo.webm)
+- **Slide deck (7 slides):** [docs/demo/floodlens-deck.pdf](docs/demo/floodlens-deck.pdf) ·
+  editable [PPTX](docs/demo/floodlens-deck.pptx) · [HTML mirror](docs/demo/deck.html)
+
 ## What FloodLens is
 
 A guided 5–8 minute activity for secondary teachers, students and the curious public, structured
@@ -98,8 +105,8 @@ npm install
 npm run dev        # development server
 npm run build      # typecheck + production build
 npm run preview    # serve the production build
-npm test           # 14 unit tests (schema, interpretation, state)
-npm run test:e2e   # 8 end-to-end tests (desktop + mobile Chromium)
+npm test           # 34 unit tests (schema, interpretation, state)
+npm run test:e2e   # 18 end-to-end tests (desktop + mobile Chromium)
 ```
 
 ## Project structure
@@ -125,10 +132,10 @@ floodlens/
 
 ## Testing
 
-- **Unit (14):** manifest validation and referential integrity; the §13 interpretation truth
+- **Unit (34):** manifest validation and referential integrity; the §13 interpretation truth
   table; statistics from analytical arrays; deterministic generator; store navigation, answers,
   layer toggles and blend derivation.
-- **End-to-end (8):** the complete seven-chapter journey on desktop and mobile (including the
+- **End-to-end (18):** the complete seven-chapter journey on desktop and mobile (including the
   three exercises and the sources chapter), no horizontal overflow on mobile, reduced motion with
   the text alternative, and keyboard navigation with visible focus.
 
@@ -159,8 +166,8 @@ Ready-to-paste content for the project submission form (official guides:
 |---|---|
 | Project Name | FloodLens |
 | High-Level Project Summary | FloodLens is an open-source educational web app for the “Dancing with the SARs” challenge. It turns NISAR-style SAR observations into a guided territorial journey: a registered two-date comparison on a 3D territory, traceable evidence cards with method and limitations, and three corrected interpretation exercises. It teaches the public what radar can and cannot conclude about flood water, with full source traceability and accessibility. |
-| Link to Project Demo | A video of 30 seconds or less, or a deck of at most 7 slides (title and intro included), in English, hosted publicly. *(Add the public link before submitting.)* |
-| Link to Final Project | https://github.com/carlosjperez/floodlens (public repository; add the deployed site URL when published). |
+| Link to Project Demo | [Demo video, 27 s](https://github.com/carlosjperez/floodlens/blob/main/docs/demo/floodlens-demo.webm) and [7-slide deck (PDF)](https://github.com/carlosjperez/floodlens/blob/main/docs/demo/floodlens-deck.pdf), in English, hosted publicly in this repository. |
+| Link to Final Project | https://github.com/carlosjperez/floodlens (public repository) · live app: https://floodlens-ev27apvmvw9.qoder.website |
 | Detailed Project Description | The sections above: what it is, what it consists of, how it works, scope, stack, testing and accessibility. |
 | Use of Super Intelligence (SI) | AI tools assisted implementation (code scaffolding, translation, test writing) under human direction. The project concept, interpretation method and editorial decisions are the team's. Synthetic demonstration data is generated procedurally in code and labeled as synthetic in the UI and manifest; no AI-generated images or video are shipped. See docs/SI_USAGE.md. |
 | NASA Data | NISAR Data User Guide (ASF); NASA Earthdata “Intro to Synthetic Aperture Radar”; NASA ARSET trainings. The interpretation contract and case manifest are built around NISAR L-band SAR products (GCOV-style backscatter, two-date change); a verified NISAR scene is the next pipeline milestone. |

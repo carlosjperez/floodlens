@@ -25,7 +25,7 @@ export function EvidenceMarkers({
             aria-label={`Evidence point ${i + 1}: ${p.title}`}
             aria-pressed={selected === p.id}
             onClick={() => selectPoint(selected === p.id ? null : p.id)}
-            className="data pointer-events-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-select bg-panel text-sm font-bold text-ink shadow-[0_2px_6px_rgb(16_24_32/0.35)] transition-transform hover:scale-110 aria-pressed:bg-select aria-pressed:text-white"
+            className="data pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border-2 border-select bg-panel text-sm font-bold text-ink shadow-[0_2px_6px_rgb(16_24_32/0.35)] transition-transform hover:scale-110 aria-pressed:bg-select aria-pressed:text-white"
           >
             {i + 1}
           </button>

@@ -12,7 +12,7 @@
   --color-line: #d4d7d3;
   --color-reference: #1f5fa6;
   --color-newwater: #0e8f9a;
-  --color-ambiguous: #a06a00;
+  --color-ambiguous: #8a5a00;
   --color-noteval: #6b7280;
   --color-select: #101820;
   --color-alert: #a03e00;
@@ -62,7 +62,7 @@ h1, h2, h3, h4 {
 .hatch-amber {
   background-image: repeating-linear-gradient(
     45deg,
-    rgb(160 106 0 / 0.55) 0 2px,
+    rgb(138 90 0 / 0.55) 0 2px,
     transparent 2px 6px
   );
 }

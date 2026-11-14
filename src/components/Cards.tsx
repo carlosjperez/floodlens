@@ -20,7 +20,7 @@ export function EvidenceCard({ point, index }: { point: EvidencePoint; index: nu
     <Card className={cn("rounded-card", isSel && "ring-2 ring-select")}>
       <CardHeader>
         <CardTitle className="flex items-baseline gap-2 text-base">
-          <span className="data text-sm text-ink-soft">{index + 1}</span>
+          <span className="text-sm tabular-nums text-ink-soft">{index + 1}</span>
           {point.title}
         </CardTitle>
       </CardHeader>
@@ -78,7 +78,7 @@ export function ExerciseCard({
     <Card className="rounded-card">
       <CardHeader>
         <CardTitle className="text-base">
-          <span className="data mr-2 text-sm text-ink-soft">Exercise {index + 1}</span>
+          <span className="mr-2 text-sm tabular-nums text-ink-soft">Exercise {index + 1}</span>
           {exercise.question}
         </CardTitle>
       </CardHeader>
@@ -109,7 +109,7 @@ export function ExerciseCard({
         {answered && (
           <div role="status" className="space-y-2 rounded-control border border-line bg-muted p-3">
             <p className="font-semibold">
-              {correct ? "Correct." : "Answer corrected."}
+              {correct ? "Supported by the evidence." : "Not supported by the evidence."}
             </p>
             <p className="text-ink-soft">{exercise.explanation}</p>
             <p className="text-ink-soft">

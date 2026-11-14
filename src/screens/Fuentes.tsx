@@ -1,32 +1,22 @@
 import { SyntheticStamp } from "@/components/Chrome";
 import { DEMO_CASE } from "@/lib/demo";
 
-function Table({ head, rows }: { head: string[]; rows: string[][] }) {
+function RecordList({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
-    <div className="overflow-x-auto rounded-card border border-line">
-      <table className="w-full text-left text-xs">
-        <thead className="bg-muted text-ink-soft">
-          <tr>
-            {head.map((h) => (
-              <th key={h} className="px-2 py-1.5 font-semibold">
-                {h}
-              </th>
+    <ul className="space-y-2">
+      {rows.map((r, i) => (
+        <li key={i} className="rounded-card border border-line bg-panel p-3">
+          <dl className="grid grid-cols-[6.5rem_1fr] gap-x-3 gap-y-1 text-sm">
+            {head.map((h, j) => (
+              <div key={h} className="contents">
+                <dt className="text-xs font-semibold text-ink-soft">{h}</dt>
+                <dd className="break-words">{r[j]}</dd>
+              </div>
             ))}
-          </tr>
-        </thead>
-        <tbody className="data">
-          {rows.map((r, i) => (
-            <tr key={i} className="border-t border-line/60 align-top">
-              {r.map((c, j) => (
-                <td key={j} className="px-2 py-1.5">
-                  {c}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </dl>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -42,7 +32,7 @@ export function Fuentes() {
       </div>
       <section className="space-y-2" aria-label="Observations">
         <h3 className="font-display text-sm font-semibold">Observations and products</h3>
-        <Table
+        <RecordList
           head={["ID", "Product", "Mission", "Acquisition", "Version", "Channel"]}
           rows={DEMO_CASE.observations.map((o) => [
             o.id,
@@ -56,7 +46,7 @@ export function Fuentes() {
       </section>
       <section className="space-y-2" aria-label="Derived layers">
         <h3 className="font-display text-sm font-semibold">Derived layers and provenance</h3>
-        <Table
+        <RecordList
           head={["Layer", "Method", "Inputs", "Processed", "Code", "Limitations"]}
           rows={DEMO_CASE.layers.map((l) => [
             l.id,
@@ -75,7 +65,7 @@ export function Fuentes() {
             <li key={s.id} className="rounded-card border border-line bg-panel p-3">
               <p className="font-semibold">
                 {s.url ? (
-                  <a href={s.url} target="_blank" rel="noreferrer" className="underline underline-offset-2">
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
                     {s.title}
                   </a>
                 ) : (

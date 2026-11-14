@@ -28,7 +28,7 @@ async function completeJourney(page: import("@playwright/test").Page) {
   ];
   for (let i = 0; i < answers.length; i++) {
     await page.getByRole("radio", { name: answers[i] }).check();
-    await expect(page.getByText("Correct.")).toBeVisible();
+    await expect(page.getByText("Supported by the evidence.")).toBeVisible();
     await expect(page.getByText("Why the others are not supported:")).toBeVisible();
     if (i < answers.length - 1) {
       await page.getByRole("button", { name: /Next exercise/ }).click();

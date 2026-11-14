@@ -37,6 +37,25 @@ export function Evidencia() {
           </Button>
         ))}
       </div>
+      {(!visible.ambiguous || !visible.exclusion) && (
+        <p
+          role="status"
+          className="rounded-control border border-alert bg-alert/10 px-3 py-2 text-sm font-semibold text-alert"
+        >
+          Uncertainty layers hidden. Not evaluated is not declared safe.
+          <Button
+            variant="outline"
+            size="sm"
+            className="ml-2"
+            onClick={() => {
+              if (!visible.ambiguous) toggleLayer("ambiguous");
+              if (!visible.exclusion) toggleLayer("exclusion");
+            }}
+          >
+            Show them
+          </Button>
+        </p>
+      )}
       <details open className="space-y-3">
         <summary className="cursor-pointer font-display text-sm font-semibold">
           Evidence cards ({DEMO_CASE.evidencePoints.length})

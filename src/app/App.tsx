@@ -88,7 +88,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col lg:h-screen">
       <TopBar />
-      <main className="grid flex-1 lg:min-h-0 lg:grid-cols-[1fr_440px] lg:grid-rows-[minmax(0,1fr)]">
+      <main className="grid flex-1 pb-28 lg:min-h-0 lg:grid-cols-[1fr_440px] lg:grid-rows-[minmax(0,1fr)] lg:pb-0">
         <section
           aria-label="Territory viewer"
           className="border-b border-line lg:overflow-y-auto lg:border-b-0 lg:border-r"

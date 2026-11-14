@@ -29,7 +29,7 @@ export function TopBar() {
         >
           FloodLens
         </button>
-        <nav aria-label="Chapters" className="order-3 flex w-full flex-wrap gap-1 lg:order-none lg:w-auto lg:flex-1">
+        <nav aria-label="Chapters" className="order-3 flex w-full gap-1 overflow-x-auto lg:order-none lg:w-auto lg:flex-1 lg:flex-wrap lg:overflow-visible">
           {CHAPTER_ORDER.filter((c) => c !== "portada").map((c) => (
             <button
               key={c}
@@ -37,7 +37,7 @@ export function TopBar() {
               aria-current={chapter === c ? "page" : undefined}
               onClick={() => go(c)}
               className={cn(
-                "rounded-control px-2.5 py-1 text-sm transition-colors",
+                "flex-none whitespace-nowrap rounded-control px-2.5 py-1 text-sm transition-colors",
                 chapter === c
                   ? "bg-primary font-semibold text-primary-foreground"
                   : "text-ink-soft hover:bg-accent hover:text-ink",
@@ -53,6 +53,7 @@ export function TopBar() {
             size="sm"
             onClick={() => setMode(mode === "guided" ? "free" : "guided")}
             aria-pressed={mode === "free"}
+            title={mode === "guided" ? "Guided: follow the chapter order with Next" : "Free: jump to any chapter from the top bar"}
           >
             {mode === "guided" ? <Compass /> : <Orbit />}
             {mode === "guided" ? "Guided mode" : "Free mode"}
@@ -61,6 +62,7 @@ export function TopBar() {
             variant="outline"
             size="sm"
             aria-pressed={reducedMotion}
+            title="Make transitions instant (reduced motion)"
             onClick={() => setReducedMotion(!reducedMotion)}
           >
             {reducedMotion ? <Play /> : <Pause />}
@@ -77,7 +79,6 @@ const LEGEND = [
   { label: "Possible new water", cls: "bg-newwater ring-1 ring-[#064a52]" },
   { label: "Ambiguous area", cls: "hatch-amber bg-ambiguous/20" },
   { label: "Not evaluated", cls: "hatch-gray bg-noteval/20" },
-  { label: "Selection", cls: "bg-panel ring-2 ring-select" },
 ];
 
 export function Legend() {
@@ -103,6 +104,9 @@ export function BottomBar() {
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
         <Legend />
         <div className="ml-auto flex items-center gap-2">
+          <span className="text-xs tabular-nums text-ink-soft">
+            Chapter {i + 1} of {CHAPTER_ORDER.length}
+          </span>
           <Button variant="outline" size="sm" onClick={prev} disabled={i <= 0}>
             <ChevronLeft /> Previous
           </Button>
@@ -119,7 +123,7 @@ export function TextAlternative() {
   return (
     <details className="rounded-card border border-line bg-panel p-3 text-sm">
       <summary className="cursor-pointer font-semibold">Text alternative to the viewer</summary>
-      <div className="mt-3 space-y-3 text-ink-soft">
+      <div className="mt-3 max-w-[70ch] space-y-3 text-ink-soft">
         {DEMO_CASE.observations.map((o) => (
           <p key={o.id}>
             <strong className="text-ink">Observation {o.id === "obs-a" ? "A" : "B"}</strong>{" "}
