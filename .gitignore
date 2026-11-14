@@ -1,0 +1,25 @@
+# Dependencies / build
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Credentials / env — Earthdata Login stays out of the repo and the browser
+.env
+.env.*
+*.netrc
+
+# Voluminous original products — never commit (see docs/data-provenance.md)
+data/raw/
+*.h5
+*.hdf5
+*.SAFE/
+*.zip
+
+# OS / editor
+.DS_Store

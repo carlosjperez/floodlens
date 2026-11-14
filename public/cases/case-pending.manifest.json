@@ -1,0 +1,14 @@
+{
+  "id": "case-pending",
+  "title": "Caso pendiente de selección",
+  "status": "draft",
+  "version": "0.1.0",
+  "studyArea": { "bbox": null, "crs": null, "localOrigin": null },
+  "observations": [],
+  "layers": [],
+  "evidencePoints": [],
+  "chapters": [],
+  "exercises": [],
+  "sources": [],
+  "limitations": []
+}

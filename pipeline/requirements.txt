@@ -1,0 +1,8 @@
+numpy
+rasterio
+h5py
+geopandas
+shapely
+# Acceso programático opcional (requieren Earthdata Login):
+# asf_search
+# earthaccess
