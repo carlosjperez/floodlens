@@ -23,3 +23,13 @@ data/raw/
 
 # OS / editor
 .DS_Store
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# Impeccable local overrides
+.impeccable/config.local.json
+
+# Impeccable review captures (local process artifacts)
+.impeccable/review/*.png

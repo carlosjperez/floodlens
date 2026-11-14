@@ -1,56 +1,67 @@
-# Limitaciones y alcance
+# Limitations and scope
 
-## Alcance preventivo
+## Preventive scope
 
-La prevención se aborda mediante educación y preparación informativa. FloodLens **no** es un sistema de alerta, predicción, navegación segura ni diagnóstico de viviendas, y no afirma que reduzca daños sin una evaluación posterior.
+Prevention is addressed through education and informational preparation. FloodLens is not an
+alert, prediction, safe-navigation or home-diagnosis system, and does not claim damage reduction
+without a later evaluation.
 
-## Vocabulario obligatorio (§5)
+## Required vocabulary (§5)
 
-| Usar | Evitar sin respaldo |
+| Use | Avoid without support |
 |---|---|
-| Posible agua nueva | Zona definitivamente inundada |
-| Cambio observado | Causa demostrada |
-| Área no evaluada | Zona segura |
-| Comparación de fechas | Reconstrucción completa |
-| Ejercicio educativo | Recomendación operativa |
+| Possible new water | Definitely flooded zone |
+| Observed change | Demonstrated cause |
+| Not-evaluated area | Safe zone |
+| Date comparison | Complete reconstruction |
+| Educational exercise | Operational recommendation |
 
-Principios: evidencia antes que espectacularidad; fechas de las observaciones siempre visibles; datos originales y resultados derivados claramente separados; la incertidumbre forma parte de la interfaz; ninguna animación insinúa hechos no observados; ninguna instrucción de seguridad generada sin revisión oficial.
+Principles: evidence before spectacle; observation dates always visible; original data and
+derived results clearly separated; uncertainty is part of the interface; no animation insinuates
+unobserved facts; no safety instruction generated without official review.
 
-## Fuera del MVP (§6)
+## Outside the MVP (§6)
 
-Simulación del avance del agua; profundidades no medidas; predicción; alertas y rutas de evacuación; estimación de daños; búsqueda de cualquier dirección; procesamiento bajo demanda; chat generativo; autenticación; edificios y carreteras sin fuente permitida.
+Simulation of water advance; unmeasured depths; prediction; alerts and evacuation routes; damage
+estimation; address lookup; on-demand processing; generative chat; authentication; buildings and
+roads without a permitted source.
 
-## Límites del método
+## Limits of the method
 
-Ver [methodology.md](methodology.md): umbralización con limitaciones conocidas (agua bajo vegetación en banda L), estadísticas solo desde archivo analítico, etiqueta **exploratorio** sin contraste suficiente.
+See [methodology.md](methodology.md): thresholding with known limitations (water under vegetation
+in L-band), statistics only from the analytical file, **exploratory** label without sufficient
+contrast.
 
-## Riesgos y respuesta (§20)
+## Risks and responses (§20)
 
-| Riesgo | Respuesta |
+| Risk | Response |
 |---|---|
-| No hay pareja NISAR adecuada | Cambiar de caso antes de desarrollar la historia; revisar admisibilidad |
-| Procesamiento demasiado complejo | Elegir producto o alcance más manejable |
-| Referencia insuficiente | Presentar el análisis como exploratorio |
-| Sin elevación permitida | Plano georreferenciado |
-| 3D lento | Simplificar geometría, texturas y efectos |
-| Animaciones engañosas | Limitarse a transiciones de presentación |
-| Prevención poco concreta | Definir y evaluar aprendizajes específicos |
-| Exceso de alcance | Un caso, tres puntos, tres ejercicios |
-| Condiciones de uso de datos | Registrarlas en el inventario y respetarlas |
+| No suitable NISAR pair | Change case before developing the story; review admissibility |
+| Processing too complex | Choose a more manageable product or scope |
+| Insufficient reference | Present the analysis as exploratory |
+| No permitted elevation | Georeferenced plane |
+| Slow 3D | Simplify geometry, textures and effects |
+| Misleading animations | Limit to presentation transitions |
+| Vague prevention | Define and evaluate specific learning outcomes |
+| Scope creep | One case, three points, three exercises |
+| Data use conditions | Register them in the inventory and respect them |
 
-## Accesibilidad (§17)
+## Accessibility (§17)
 
-- El recorrido no depende exclusivamente del 3D; alternativa textual al contenido esencial.
-- Ejercicios en HTML, navegación por teclado, foco visible, botón para omitir animaciones y respeto de la preferencia de movimiento reducido.
-- El color no es el único identificador: tramas, bordes y etiquetas (agua de referencia azul estable; posible agua nueva turquesa con contorno; área ambigua trama ámbar; no evaluado trama gris; selección contorno de alto contraste).
-- Interfaz utilizable antes de cargar todos los recursos; carga diferida de capas; demo de respaldo sin dependencias de red.
+- The journey does not depend exclusively on 3D; text alternative for the essential content.
+- Exercises in HTML, keyboard navigation, visible focus, a button to skip animations, and respect
+  for the reduced-motion preference.
+- Color is not the only identifier: hatches, borders and labels (reference water stable blue;
+  possible new water turquoise with outline; ambiguous area amber hatch; not evaluated gray
+  hatch; selection high-contrast outline).
+- Interface usable before all resources load; lazy layer loading; offline fallback demo with no
+  network dependencies.
 
-## Pendientes abiertos (anexo del dossier)
+## Open items (dossier annex)
 
-| Pendiente | Estado |
+| Item | Status |
 |---|---|
-| Texto oficial completo de la pestaña Resources y reglas de datos | Sin verificar (página no recuperable en la extracción) |
-| Caso NISAR concreto y escenas | Pendiente |
-| Fuente permitida de elevación | Pendiente |
-| Referencia independiente para contraste | Pendiente |
-| Contenido oficial de preparación para enlazar | Pendiente de selección y revisión |
+| Concrete NISAR case and scenes | Pending (Phase 0) |
+| Permitted elevation source | Pending |
+| Independent reference for contrast | Pending |
+| Official preparedness content to link | Pending selection and review |

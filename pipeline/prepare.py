@@ -1,18 +1,19 @@
-"""Etapa 2 — Preparación.
+"""Stage 2 — Preparation.
 
-Contrato (dossier §13):
-    Entrada:  productos originales + inventario del caso.
-    Salida:   capas comparables en geometría y canales: recorte, alineación,
-              normalización de visualización y propagación de máscaras de calidad.
+Contract (dossier §13):
+    Input:  original products + case inventory.
+    Output: layers comparable in geometry and channels: subsetting,
+            alignment, visualization normalization and quality-mask
+            propagation.
 
-Exporta sistema local en metros (X este, Y altura, Z norte) con origen
-documentado; los metadatos conservan CRS y transformación originales.
+Exports a local system in meters (X east, Y height, Z north) with a
+documented origin; metadata preserves the original CRS and transformation.
 """
 
 
 def prepare_layers(inventory: dict) -> dict:
-    """Lee producto, elige canal, recorta, alinea, normaliza y propaga máscaras."""
-    raise NotImplementedError("Fase 1: implementar tras la puerta de viabilidad de datos")
+    """Read product, choose channel, subset, align, normalize and propagate masks."""
+    raise NotImplementedError("Phase 1: implement after the data viability gate")
 
 
 if __name__ == "__main__":

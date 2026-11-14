@@ -1,17 +1,17 @@
-"""Etapa 4 — Contraste.
+"""Stage 4 — Contrast.
 
-Contrato (dossier §13):
-    Entrada:  capas derivadas + evidencia independiente permitida.
-    Salida:   informe de validación con aciertos, errores y ambigüedades.
+Contract (dossier §13):
+    Input:  derived layers + permitted independent evidence.
+    Output: validation report with hits, errors and ambiguities.
 
-Métricas solo con referencia adecuada. Sin contraste suficiente, el resultado
-se etiqueta como exploratorio.
+Metrics only with an adequate reference. Without sufficient contrast, the
+result is labeled exploratory.
 """
 
 
 def validate_results(analysis: dict, references: list[dict]) -> dict:
-    """Revisa puntos representativos y documenta aciertos, errores y ambigüedades."""
-    raise NotImplementedError("Fase 1: implementar tras la puerta de viabilidad de datos")
+    """Review representative points and document hits, errors and ambiguities."""
+    raise NotImplementedError("Phase 1: implement after the data viability gate")
 
 
 if __name__ == "__main__":

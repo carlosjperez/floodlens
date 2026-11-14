@@ -1,19 +1,19 @@
-"""Etapa 3 — Interpretación.
+"""Stage 3 — Interpretation.
 
-Contrato (dossier §13):
-    Entrada:  capas comparables.
-    Salida:   agua de referencia, posible agua nueva, exclusiones y parámetros.
+Contract (dossier §13):
+    Input:  comparable layers.
+    Output: reference water, possible new water, exclusions and parameters.
 
-Regla: posible agua nueva = candidato a agua en la observación del episodio
-+ evidencia de cambio respecto a la referencia - agua de referencia
-- zonas inválidas o excluidas. Sin umbral universal prefijado; el agua bajo
-vegetación (respuesta brillante en banda L) no usa la regla de agua abierta.
+Rule: possible new water = water candidate in the episode observation
++ evidence of change vs the reference - reference water
+- invalid or excluded zones. No universal preset threshold; water under
+vegetation (bright response in L-band) does not use the open-water rule.
 """
 
 
 def analyse_change(layers: dict) -> dict:
-    """Candidatos a agua abierta y cambio respecto a la referencia."""
-    raise NotImplementedError("Fase 1: implementar tras la puerta de viabilidad de datos")
+    """Open-water candidates and change vs the reference."""
+    raise NotImplementedError("Phase 1: implement after the data viability gate")
 
 
 if __name__ == "__main__":

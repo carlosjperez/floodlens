@@ -3,6 +3,6 @@ rasterio
 h5py
 geopandas
 shapely
-# Acceso programático opcional (requieren Earthdata Login):
+# Optional programmatic access (require Earthdata Login):
 # asf_search
 # earthaccess

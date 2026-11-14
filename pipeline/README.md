@@ -1,30 +1,30 @@
 # FloodLens data pipeline
 
-Esqueleto de Fase 0. Cada módulo declara el contrato de su etapa (dossier §13);
-la implementación llega en Fase 1 tras la puerta de viabilidad de datos.
+Phase 0 skeleton. Each module declares its stage's contract (dossier §13);
+implementation lands in Phase 1 after the data viability gate.
 
-## Etapas
+## Stages
 
-| Módulo | Entrada | Salida |
+| Module | Input | Output |
 |---|---|---|
-| `inventory.py` | Productos candidatos (ASF Vertex / Earthdata Search) | Inventario del caso: IDs, adquisiciones, versiones, condiciones de uso |
-| `prepare.py` | Productos originales + inventario | Capas comparables: recorte, alineación, normalización, máscaras de calidad |
-| `analyse.py` | Capas comparables | Agua de referencia, posible agua nueva, exclusiones, parámetros |
-| `validate.py` | Capas derivadas + evidencia independiente permitida | Informe de validación (aciertos, errores, ambigüedades) |
-| `export.py` | Resultados validados | Paquete del caso: archivo analítico + recurso visual + manifiesto + metodología |
+| `inventory.py` | Candidate products (ASF Vertex / Earthdata Search) | Case inventory: IDs, acquisitions, versions, use conditions |
+| `prepare.py` | Original products + inventory | Comparable layers: subsetting, alignment, normalization, quality masks |
+| `analyse.py` | Comparable layers | Reference water, possible new water, exclusions, parameters |
+| `validate.py` | Derived layers + permitted independent evidence | Validation report (hits, errors, ambiguities) |
+| `export.py` | Validated results | Case package: analytical file + visual resource + manifest + methodology |
 
-## Reglas
+## Rules
 
-- Sin umbral universal prefijado para agua abierta.
-- Estadísticas desde el archivo analítico, nunca desde píxeles de pantalla.
-- Sin contraste suficiente → etiqueta `exploratorio`.
-- Credenciales de Earthdata Login fuera del repo y del navegador (variables de entorno o `~/.netrc` local).
-- Productos originales voluminosos fuera del repo (`data/raw/`, ignorado por git).
+- No universal preset threshold for open water.
+- Statistics from the analytical file, never from screen pixels.
+- Without sufficient contrast → `exploratory` label.
+- Earthdata Login credentials outside the repo and the browser (environment variables or local `~/.netrc`).
+- Bulky original products outside the repo (`data/raw/`, git-ignored).
 
-## Uso
+## Usage
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
-python -m pipeline.inventory   # NotImplementedError hasta Fase 1
+python -m pipeline.inventory   # NotImplementedError until Phase 1
 ```

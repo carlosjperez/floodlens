@@ -1,53 +1,72 @@
-# Metodología
+# Methodology
 
-Transcripción operativa del dossier (§11, §13, §14). Ningún resultado publicado sin pasar por estas etapas.
+Operational transcription of the dossier (§11, §13, §14). No result is published without passing
+through these stages.
 
-## Pipeline de datos
+## Data pipeline
 
-| Etapa | Trabajo | Salida |
+| Stage | Work | Output |
 |---|---|---|
-| 1. Inventario | Registrar productos, adquisiciones, versiones y condiciones | Inventario del caso |
-| 2. Preparación | Leer producto, elegir canal, recortar, alinear, normalizar visualización, propagar máscaras de calidad | Capas comparables |
-| 3. Interpretación | Candidatos a agua abierta y cambio respecto a la referencia; sin umbral universal prefijado | Agua de referencia, posible agua nueva, exclusiones, parámetros |
-| 4. Contraste | Revisar puntos representativos, evidencia independiente permitida, documentar aciertos, errores y ambigüedades; métricas solo con referencia adecuada | Informe de validación |
-| 5. Exportación | Separar archivo analítico (valores y georreferencia) y recurso visual optimizado | Paquete del caso |
+| 1. Inventory | Register products, acquisitions, versions and use conditions | Case inventory |
+| 2. Preparation | Read product, choose channel, subset, align, normalize visualization, propagate quality masks | Comparable layers |
+| 3. Interpretation | Open-water candidates and change vs the reference; no universal preset threshold | Reference water, possible new water, exclusions, parameters |
+| 4. Contrast | Review representative points, permitted independent evidence, document hits, errors and ambiguities; metrics only with an adequate reference | Validation report |
+| 5. Export | Separate the analytical file (values and georeference) from the optimized visual resource | Case package |
 
-Implementación: `pipeline/` (stubs de Fase 0 con los contratos de cada etapa).
+Implementation: `pipeline/` (Phase 0 stubs carrying each stage's contract).
 
-## Regla de interpretación
+## Interpretation rule
 
 ```
-Posible agua nueva =
-    candidato a agua en la observación del episodio
-  + evidencia de cambio respecto a la referencia
-  - agua de referencia
-  - zonas inválidas o excluidas
+possible new water =
+    water candidate in the episode observation
+  + evidence of change vs the reference
+  - reference water
+  - invalid or excluded zones
 ```
 
-## Límites del método
+Class definitions used by the viewer and the legend:
 
-- La umbralización de agua tiene limitaciones conocidas; el agua bajo vegetación puede dar respuesta brillante en banda L y no se trata con la misma regla que el agua abierta.
-- Superficies y estadísticas se calculan desde el **archivo analítico**, nunca contando píxeles de una textura de pantalla.
-- Sin contraste suficiente, el resultado se etiqueta como **exploratorio**.
+- **Reference water** (stable blue): the permanent channel mapped in the reference observation.
+- **Possible new water** (turquoise with outline): the rule above.
+- **Ambiguous area** (amber hatch): water candidate without evidence of change, outside reference
+  water and exclusions. Neither flooding nor absence of water is asserted.
+- **Not evaluated** (gray hatch): invalid or excluded zones; the sensor offers no usable evidence.
+  Not equivalent to a safe zone.
 
-## Coordenadas
+## Limits of the method
 
-El pipeline exporta un sistema local en metros (X este, Y altura, Z norte, con conversión definida y probada) y un origen documentado. Los metadatos conservan el sistema de referencia y la transformación geográfica originales.
+- Water thresholding has known limitations; water under vegetation can return a bright response
+  in L-band and is not treated with the same rule as open water.
+- Areas and statistics are computed from the **analytical file**, never by counting pixels of a
+  screen texture.
+- Without sufficient contrast, the result is labeled **exploratory**.
 
-## Motor visual (Three.js)
+## Coordinates
 
-Three.js renderiza el territorio, muestra observaciones como texturas, superpone máscaras, gestiona cámara y selección y anima transiciones de presentación. **No clasifica inundaciones ni infiere profundidad.**
+The pipeline exports a local system in meters (X east, Y height, Z north, with a defined and
+tested conversion) and a documented origin. Metadata preserves the original reference system and
+geographic transformation.
 
-- La máscara de agua es una capa temática adherida a la superficie: sin olas, sin profundidad aparente, sin cota física.
-- Modo guiado (posiciones por capítulo) y modo libre (órbita limitada al área); el usuario puede interrumpir cualquier transición.
-- Si se exagera el relieve vertical, se indica en pantalla. Si no hay relieve permitido, se usa un plano georreferenciado en perspectiva.
+## Visual engine (Three.js)
 
-### Animaciones permitidas y prohibidas
+Three.js renders the territory, shows observations as textures, overlays masks, manages camera
+and selection, and animates presentation transitions. **It does not classify floods or infer
+depth.**
 
-| Sí | No |
+- The water mask is a thematic layer attached to the surface: no waves, no apparent depth, no
+  physical elevation.
+- Guided mode (positions per chapter) and free mode (orbit limited to the area); the user can
+  interrupt any transition.
+- If vertical relief is exaggerated, it is stated on screen. If no permitted relief is available,
+  a georeferenced plane in perspective is used.
+
+### Allowed and forbidden animations
+
+| Allowed | Forbidden |
 |---|---|
-| Acercamientos de cámara | Agua avanzando calle a calle sin modelo validado |
-| Aparición progresiva de etiquetas | Subida uniforme de nivel presentada como histórica |
-| Transiciones entre capas y fechas | Profundidades no calculadas |
-| Resultado de áreas seleccionadas | Edificios dañados o vehículos arrastrados sin evidencia |
-| Explicaciones esquemáticas etiquetadas como tales | Interpolaciones entre observaciones presentadas como hechos |
+| Camera approaches | Water advancing street by street without a validated model |
+| Progressive label reveal | Uniform level rise presented as historical |
+| Transitions between layers and dates | Uncalculated depths |
+| Results for selected areas | Damaged buildings or dragged vehicles without evidence |
+| Schematic explanations labeled as such | Interpolations between observations presented as facts |

@@ -1,14 +1,23 @@
-# Registro de uso de IA (SI)
+# Super Intelligence (SI) usage log
 
-Registro para el formulario de entrega del NASA Space Apps Challenge 2026. Las reglas del evento exigen declarar el uso de IA; la IA no idea la solución (ver [reglas](resources/space-apps-reglas-entrega-jurado.md)).
+Log for the NASA Space Apps Challenge 2026 submission form. The event rules require declaring AI
+("Super Intelligence") use; SI does not conceive the solution (see
+[rules](resources/space-apps-reglas-entrega-jurado.md)).
 
-| Fecha | Herramienta | Uso | Alcance |
+| Date | Tool | Use | Scope |
 |---|---|---|---|
-| 2026-11-14 | Qoder (asistente agéntico) | Generación del repositorio público: estructura de carpetas, transcripción y organización de documentación a partir del dossier de autoría humana, descarga de documentos públicos de referencia del template MIT, stubs de pipeline con contratos del dossier | Infraestructura y documentación. La solución, el diseño de producto y las decisiones (caso, método, vocabulario, alcance) son de autoría humana y constan en `docs/FloodLens_Dossier_Proyecto.pdf` |
+| 2026-11-14 | Qoder (agentic assistant) | Public repository generation: folder structure, documentation organization from the human-authored dossier, reference documents from the MIT template, pipeline stubs with the dossier's contracts | Infrastructure and documentation. The solution, product design and decisions (case, method, vocabulary, scope) are human-authored and recorded in `docs/FloodLens_Dossier_Proyecto.pdf` |
+| 2026-11-14 | Qoder (agentic assistant) | App implementation assistance: React/Three.js scaffolding, unit and e2e test writing, English localization, README and submission kit drafting, under human direction and review | Code and texts. Interpretation method, editorial content and design direction come from the dossier and the team |
 
-## Declaraciones
+## Declarations
 
-- No se han generado imágenes ni videos con IA en este repositorio. Si se generan más adelante, se marcarán con marca de agua según las reglas.
-- No se usan logos de NASA.
-- Ningún dato, cifra o resultado publicado es un hallazgo generado por IA: el manifiesto del caso es una plantilla vacía (`case-pending`) hasta la verificación de Fase 0.
-- Este registro debe completarse con cualquier uso posterior de IA durante el hackathon (código, textos, assets) antes del envío.
+- No AI-generated images or videos are shipped in this repository. All shipped rasters are
+  procedural canvas renders generated in code (`src/lib/textures.ts`, `src/lib/demo.ts`) and
+  labeled “Synthetic demonstration data” in the UI and manifest. If AI imagery is generated
+  later, it will carry a visible watermark per the rules.
+- No NASA logos or brand elements are used.
+- No published datum, figure or result is an AI-generated finding: the synthetic case is labeled
+  `demo-synthetic`, and the real-case manifest is an empty template (`case-pending`) until
+  Phase 0 verification.
+- This log must be updated with any further SI use during the hackathon (code, texts, assets)
+  before submission.

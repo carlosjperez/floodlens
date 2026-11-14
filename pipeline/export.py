@@ -1,19 +1,19 @@
-"""Etapa 5 — Exportación.
+"""Stage 5 — Export.
 
-Contrato (dossier §13):
-    Entrada:  resultados validados (o etiquetados exploratorios).
-    Salida:   paquete del caso versionado: archivo analítico (valores y
-              georreferencia) separado del recurso visual optimizado,
-              más manifiesto, contenido y metodología.
+Contract (dossier §13):
+    Input:  validated results (or labeled exploratory).
+    Output: versioned case package: analytical file (values and
+            georeference) separated from the optimized visual resource,
+            plus manifest, content and methodology.
 
-El manifiesto sigue la plantilla de public/cases/case-pending.manifest.json:
-cada observación, capa derivada y afirmación queda trazada a su fuente.
+The manifest follows the public/cases/case-pending.manifest.json template:
+every observation, derived layer and claim is traced to its source.
 """
 
 
 def export_case(analysis: dict, validation: dict) -> dict:
-    """Separa archivo analítico y recurso visual; emite el paquete del caso."""
-    raise NotImplementedError("Fase 1: implementar tras la puerta de viabilidad de datos")
+    """Separate analytical file and visual resource; emit the case package."""
+    raise NotImplementedError("Phase 1: implement after the data viability gate")
 
 
 if __name__ == "__main__":

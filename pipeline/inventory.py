@@ -1,19 +1,19 @@
-"""Etapa 1 — Inventario.
+"""Stage 1 — Inventory.
 
-Contrato (dossier §13):
-    Entrada:  productos candidatos localizados en ASF Data Search (Vertex)
-              o NASA Earthdata Search.
-    Salida:   inventario del caso con IDs de productos originales,
-              adquisiciones y área cubierta, nivel/versión/polarización,
-              condiciones de uso y credenciales necesarias (Earthdata Login).
+Contract (dossier §13):
+    Input:  candidate products located in ASF Data Search (Vertex)
+            or NASA Earthdata Search.
+    Output: case inventory with original product IDs, acquisitions and
+            covered area, level/version/polarization, use conditions and
+            required credentials (Earthdata Login).
 
-El inventario registra las condiciones de uso de cada dato antes de descargar.
+The inventory registers each datum's use conditions before downloading.
 """
 
 
 def build_inventory(products: list[dict]) -> dict:
-    """Registra productos, adquisiciones, versiones y condiciones de uso."""
-    raise NotImplementedError("Fase 1: implementar tras la puerta de viabilidad de datos")
+    """Register products, acquisitions, versions and use conditions."""
+    raise NotImplementedError("Phase 1: implement after the data viability gate")
 
 
 if __name__ == "__main__":

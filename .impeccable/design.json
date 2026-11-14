@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T22:28:00Z",
+  "title": "Design System: FloodLens",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f4f4f2", "tonalRamp": ["oklch(15% 0.005 100)", "oklch(26% 0.005 100)", "oklch(38% 0.005 100)", "oklch(49% 0.005 100)", "oklch(61% 0.005 100)", "oklch(72% 0.005 100)", "oklch(84% 0.005 100)", "oklch(95% 0.005 100)"] },
+      "panel": { "role": "neutral", "displayName": "Panel", "canonical": "#fbfbfa", "tonalRamp": ["oklch(15% 0.004 100)", "oklch(26% 0.004 100)", "oklch(38% 0.004 100)", "oklch(49% 0.004 100)", "oklch(61% 0.004 100)", "oklch(72% 0.004 100)", "oklch(84% 0.004 100)", "oklch(95% 0.004 100)"] },
+      "ink": { "role": "primary", "displayName": "Survey Ink", "canonical": "#16232e", "tonalRamp": ["oklch(15% 0.03 240)", "oklch(26% 0.03 240)", "oklch(38% 0.03 240)", "oklch(49% 0.03 240)", "oklch(61% 0.03 240)", "oklch(72% 0.03 240)", "oklch(84% 0.03 240)", "oklch(95% 0.03 240)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#46586a", "tonalRamp": ["oklch(15% 0.04 240)", "oklch(26% 0.04 240)", "oklch(38% 0.04 240)", "oklch(49% 0.04 240)", "oklch(61% 0.04 240)", "oklch(72% 0.04 240)", "oklch(84% 0.04 240)", "oklch(95% 0.04 240)"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#d4d7d3", "tonalRamp": ["oklch(15% 0.008 100)", "oklch(26% 0.008 100)", "oklch(38% 0.008 100)", "oklch(49% 0.008 100)", "oklch(61% 0.008 100)", "oklch(72% 0.008 100)", "oklch(84% 0.008 100)", "oklch(95% 0.008 100)"] },
+      "reference": { "role": "secondary", "displayName": "Reference Blue", "canonical": "#1f5fa6", "tonalRamp": ["oklch(15% 0.12 250)", "oklch(26% 0.12 250)", "oklch(38% 0.12 250)", "oklch(49% 0.12 250)", "oklch(61% 0.12 250)", "oklch(72% 0.12 250)", "oklch(84% 0.12 250)", "oklch(95% 0.12 250)"] },
+      "newwater": { "role": "secondary", "displayName": "New Water Turquoise", "canonical": "#0e8f9a", "tonalRamp": ["oklch(15% 0.1 195)", "oklch(26% 0.1 195)", "oklch(38% 0.1 195)", "oklch(49% 0.1 195)", "oklch(61% 0.1 195)", "oklch(72% 0.1 195)", "oklch(84% 0.1 195)", "oklch(95% 0.1 195)"] },
+      "newwater-edge": { "role": "secondary", "displayName": "Sheet Edge", "canonical": "#064a52", "tonalRamp": ["oklch(15% 0.08 195)", "oklch(26% 0.08 195)", "oklch(38% 0.08 195)", "oklch(49% 0.08 195)", "oklch(61% 0.08 195)", "oklch(72% 0.08 195)", "oklch(84% 0.08 195)", "oklch(95% 0.08 195)"] },
+      "ambiguous": { "role": "tertiary", "displayName": "Ambiguous Amber", "canonical": "#a06a00", "tonalRamp": ["oklch(15% 0.12 80)", "oklch(26% 0.12 80)", "oklch(38% 0.12 80)", "oklch(49% 0.12 80)", "oklch(61% 0.12 80)", "oklch(72% 0.12 80)", "oklch(84% 0.12 80)", "oklch(95% 0.12 80)"] },
+      "noteval": { "role": "tertiary", "displayName": "Not-Evaluated Gray", "canonical": "#6b7280", "tonalRamp": ["oklch(15% 0.02 250)", "oklch(26% 0.02 250)", "oklch(38% 0.02 250)", "oklch(49% 0.02 250)", "oklch(61% 0.02 250)", "oklch(72% 0.02 250)", "oklch(84% 0.02 250)", "oklch(95% 0.02 250)"] },
+      "select": { "role": "primary", "displayName": "Selection Black", "canonical": "#101820", "tonalRamp": ["oklch(15% 0.02 240)", "oklch(26% 0.02 240)", "oklch(38% 0.02 240)", "oklch(49% 0.02 240)", "oklch(61% 0.02 240)", "oklch(72% 0.02 240)", "oklch(84% 0.02 240)", "oklch(95% 0.02 240)"] },
+      "alert": { "role": "tertiary", "displayName": "Alert Rust", "canonical": "#a03e00", "tonalRamp": ["oklch(15% 0.12 50)", "oklch(26% 0.12 50)", "oklch(38% 0.12 50)", "oklch(49% 0.12 50)", "oklch(61% 0.12 50)", "oklch(72% 0.12 50)", "oklch(84% 0.12 50)", "oklch(95% 0.12 50)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Wordmark, cover heading and chapter titles; Archivo with tight tracking and balanced wrapping." },
+      "body": { "displayName": "Body", "purpose": "Method notes, explanations and limitations; Source Sans 3 at 16px/1.55." },
+      "data": { "displayName": "Data", "purpose": "Dates, product ids, coordinates, blend readout and provenance stamps; monospace with tabular figures only." }
+    },
+    "shadows": [
+      { "name": "marker-pin", "value": "0 2px 6px rgb(16 24 32 / 0.35)", "purpose": "Single soft ambient shadow under map evidence markers so they read as instrument pins. No other surface lifts." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for state transitions (chips, buttons, blend)." },
+      { "name": "duration-state", "value": "150ms", "purpose": "Hover and pressed state transitions." },
+      { "name": "duration-camera", "value": "900ms", "purpose": "Presentation camera moves between chapters; skipped entirely under reduced motion or the Skip animations toggle." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main progression action (Explore the story, Next).",
+      "html": "<button class=\"ds-btn-primary\">Next</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; background: #16232e; color: #f4f4f2; border: none; border-radius: 4px; padding: 6px 12px; font: 600 14px/1.4 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #101820; } .ds-btn-primary:focus-visible { outline: 2px solid #101820; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; cursor: default; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions and mode toggles (Guided mode, Skip animations, Previous).",
+      "html": "<button class=\"ds-btn-outline\">Guided mode</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 6px; background: #fbfbfa; color: #16232e; border: 1px solid #d4d7d3; border-radius: 4px; padding: 6px 12px; font: 600 14px/1.4 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-outline:hover { background: #e2e6e2; } .ds-btn-outline:focus-visible { outline: 2px solid #101820; outline-offset: 2px; } .ds-btn-outline[aria-pressed=\"true\"] { background: #16232e; color: #f4f4f2; border-color: #16232e; }"
+    },
+    {
+      "name": "Layer Chip",
+      "kind": "chip",
+      "refersTo": "chip-layer",
+      "description": "Toggles a thematic map class; swatch carries color plus hatch or outline.",
+      "html": "<button class=\"ds-chip-layer\" aria-pressed=\"true\"><span class=\"ds-swatch ds-swatch-newwater\"></span>Possible new water</button>",
+      "css": ".ds-chip-layer { display: inline-flex; align-items: center; gap: 6px; background: #fbfbfa; color: #16232e; border: 1px solid #d4d7d3; border-radius: 3px; padding: 6px 10px; font: 600 14px/1.4 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: background 150ms; } .ds-chip-layer:hover { background: #e2e6e2; } .ds-chip-layer:focus-visible { outline: 2px solid #101820; outline-offset: 2px; } .ds-chip-layer[aria-pressed=\"false\"] { opacity: 0.55; } .ds-swatch { width: 16px; height: 16px; border-radius: 2px; border: 1px solid #d4d7d3; flex: none; } .ds-swatch-newwater { background: #0e8f9a; box-shadow: inset 0 0 0 1px #064a52; }"
+    },
+    {
+      "name": "Evidence Card",
+      "kind": "card",
+      "refersTo": "card-evidence",
+      "description": "Record sheet for one evidence point: observed, interpretation, method, limitations, sources.",
+      "html": "<article class=\"ds-card-evidence ds-selected\"><h3>1 Edge of the water sheet</h3><dl><dt>What is observed</dt><dd>Backscatter change consistent with new water relative to the reference.</dd><dt>Interpretation</dt><dd>Possible new water: candidate + change, outside the reference channel.</dd></dl></article>",
+      "css": ".ds-card-evidence { background: #fbfbfa; color: #16232e; border: 1px solid #d4d7d3; border-radius: 8px; padding: 16px; max-width: 380px; font: 400 14px/1.55 'Source Sans 3', system-ui, sans-serif; } .ds-card-evidence.ds-selected { border: 2px solid #101820; } .ds-card-evidence h3 { margin: 0 0 12px; font: 700 16px/1.3 'Archivo', system-ui, sans-serif; letter-spacing: -0.015em; } .ds-card-evidence dl { margin: 0; } .ds-card-evidence dt { font-weight: 600; margin-top: 10px; } .ds-card-evidence dd { margin: 2px 0 0; color: #46586a; }"
+    },
+    {
+      "name": "Synthetic Stamp",
+      "kind": "custom",
+      "refersTo": "stamp-synthetic",
+      "description": "Provenance stamp on every surface rendering demonstration data. No icons, dots or arrows.",
+      "html": "<span class=\"ds-stamp\">Synthetic demonstration data</span>",
+      "css": ".ds-stamp { display: inline-block; width: fit-content; background: #fbfbfa; color: #a06a00; border: 1px solid #a06a00; border-radius: 3px; padding: 2px 8px; font: 600 12px/1.5 ui-monospace, 'SF Mono', 'Cascadia Mono', monospace; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Legend",
+      "kind": "custom",
+      "refersTo": "chip-layer",
+      "description": "Class legend: color plus hatch/outline/label; identical values to the map masks.",
+      "html": "<ul class=\"ds-legend\"><li><span class=\"ds-swatch ds-swatch-reference\"></span>Reference water</li><li><span class=\"ds-swatch ds-swatch-newwater\"></span>Possible new water</li><li><span class=\"ds-swatch ds-swatch-ambiguous\"></span>Ambiguous area</li><li><span class=\"ds-swatch ds-swatch-noteval\"></span>Not evaluated</li><li><span class=\"ds-swatch ds-swatch-selection\"></span>Selection</li></ul>",
+      "css": ".ds-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; list-style: none; margin: 0; padding: 0; } .ds-legend li { display: flex; align-items: center; gap: 6px; font: 400 12px/1.4 'Source Sans 3', system-ui, sans-serif; color: #46586a; } .ds-swatch { width: 16px; height: 16px; border-radius: 2px; border: 1px solid #d4d7d3; flex: none; } .ds-swatch-reference { background: #1f5fa6; } .ds-swatch-newwater { background: #0e8f9a; box-shadow: inset 0 0 0 1px #064a52; } .ds-swatch-ambiguous { background: repeating-linear-gradient(45deg, rgb(160 106 0 / 0.55) 0 2px, transparent 2px 6px), rgb(160 106 0 / 0.2); } .ds-swatch-noteval { background: repeating-linear-gradient(45deg, rgb(107 114 128 / 0.5) 0 2px, transparent 2px 6px), rgb(107 114 128 / 0.2); } .ds-swatch-selection { background: #fbfbfa; box-shadow: inset 0 0 0 2px #101820; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Survey Record",
+    "overview": "FloodLens reads like a field survey document that happens to be interactive: neutral paper grounds, hairline rules, tabular data stamps, and a map whose colors are a legend first and a picture second. Every surface behaves like a record sheet — observation dates, method notes and limitations sit next to the thing they describe, never behind it. The 3D territory is an instrument panel, not a spectacle: flat thematic masks over exaggerated relief, no waves, no simulated water advance.\n\nDensity is calm and operable. One column carries the viewer, one carries the chapter record; the chrome (top bar, legend bar) stays fixed while records scroll. Expression lives in precision — hatches, outlines, monospace stamps — not in ornament.",
+    "keyCharacteristics": [
+      "Neutral cool paper ground; panels a half-step lighter; hairline borders instead of shadows.",
+      "Class colors are semantic and constant across map, legend, chips and exercises.",
+      "Color is never the only identifier: hatches, outlines and labels accompany every class.",
+      "Near-square corners (8/4/3/2 px); sentence case everywhere; monospace only for real data.",
+      "Synthetic provenance is stamped on every surface that shows demonstration data."
+    ],
+    "rules": [
+      { "name": "The Legend Contract Rule", "body": "A class color on the map must be the same value as its legend swatch and its exercise chip. If a mask renders washed out, the render order is wrong — fix the pipeline, never the legend.", "section": "colors" },
+      { "name": "The Two-Identifier Rule", "body": "Every thematic class carries color plus a second identifier (hatch, outline or label). Removing color must leave the map readable.", "section": "colors" },
+      { "name": "The Sentence Case Rule", "body": "Headings, nav, buttons and labels use sentence case. Title Case is a defect, not a style.", "section": "typography" },
+      { "name": "The Real Data Rule", "body": "Monospace is reserved for values a sensor or a file produced. Never set prose in monospace for atmosphere.", "section": "typography" },
+      { "name": "The Flat Record Rule", "body": "Panels and cards never lift. If something needs emphasis, use the selection outline or a state color, not a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep observation dates visible wherever an observation is shown (data font, tabular figures).",
+      "Do stamp synthetic provenance on every surface that renders demonstration data.",
+      "Do pair every class color with a hatch, outline or label.",
+      "Do use sentence case and the 8/4/3/2 px radius scale on product surfaces.",
+      "Do let the journey work fully without WebGL: text alternative and HTML exercises carry the learning."
+    ],
+    "donts": [
+      "Don't render a thematic mask under an observation texture; the legend contract outranks the render stack.",
+      "Don't add taglines, helper text or secondary labels the layout should carry.",
+      "Don't invent chrome on pills and stamps (no dots, arrows, icons or mono prose).",
+      "Don't use shadows, gradients or dramatized motion to suggest water advance or depth.",
+      "Don't present synthetic or unverified data without its label; NISAR pending is stated, never silently substituted."
+    ]
+  }
+}

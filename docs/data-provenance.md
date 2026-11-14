@@ -1,48 +1,61 @@
-# Procedencia de datos
+# Data provenance
 
-Reglas de trazabilidad del dossier (§14) y recursos permitidos del reto (§2). Restricción adoptada: se trabaja únicamente con los recursos listados en la pestaña Resources del reto y los catálogos a los que enlazan, respetando las condiciones de uso de cada sitio. El caso de la DANA de Valencia queda descartado.
+Traceability rules from the dossier (§14) and permitted challenge resources (§2). Adopted
+restriction: work only with the resources listed in the challenge's Resources tab and the
+catalogs they link to, respecting each site's use conditions.
 
-## Manifiesto del caso
+## Case manifest
 
-Plantilla sin datos ficticios: [`public/cases/case-pending.manifest.json`](../public/cases/case-pending.manifest.json). Cada paquete de caso versionado incluye capas + manifiesto + contenido + metodología.
+Template without fictitious data:
+[`public/cases/case-pending.manifest.json`](../public/cases/case-pending.manifest.json).
+Every versioned case package includes layers + manifest + content + methodology.
 
-- **Cada observación:** ID interno, ID del producto original, misión, tipo de producto, adquisición, versión, canal, fuente, recursos visuales derivados, máscara válida.
-- **Cada capa derivada:** método, entradas, parámetros, fecha de procesamiento, versión del código, archivo de salida, limitaciones.
-- **Cada afirmación del contenido:** una o más referencias mediante `sourceIds`; el contenido interpretativo propio se marca como tal.
+- **Each observation:** internal ID, original product ID, mission, product type, acquisition,
+  version, channel, source, derived visual resources, valid mask.
+- **Each derived layer:** method, inputs, parameters, processing date, code version, output
+  file, limitations.
+- **Each content claim:** one or more references via `sourceIds`; own interpretive content is
+  marked as such.
 
-## Recursos del reto y uso previsto
+## Challenge resources and intended use
 
-| Recurso del reto | Uso previsto en FloodLens | Prioridad |
+| Challenge resource | Intended use in FloodLens | Priority |
 |---|---|---|
-| ASF Data Search (Vertex) | Localizar y acceder a productos radar del caso | Principal |
-| NISAR Data User Guide | Elegir productos, niveles y flujo de procesamiento | Principal |
-| NASA Earthdata Search | Datos complementarios permitidos, si hacen falta | Según necesidad |
-| Intro a teledetección y a SAR | Base de los textos educativos | Principal |
-| NASA ARSET | Fundamentar método y limitaciones | Principal |
-| NISAR StoryMaps y White Papers | Contexto de aplicaciones y narrativa | Apoyo |
-| UAVSAR Postcards | Material visual de referencia, si aporta | Opcional |
-| CSA (RCM, RADARSAT-1, tutorial SAR Python) | Referencia de implementación; datos solo si son necesarios | Opcional |
-| CONAE SAOCOM | Datos complementarios con registro, solo si aportan | Opcional |
+| ASF Data Search (Vertex) | Locate and access the case's radar products | Primary |
+| NISAR Data User Guide | Choose products, levels and processing flow | Primary |
+| NASA Earthdata Search | Permitted complementary data, if needed | As needed |
+| Intro to remote sensing and SAR | Basis of the educational texts | Primary |
+| NASA ARSET | Ground the method and limitations | Primary |
+| NISAR StoryMaps and White Papers | Application context and narrative | Support |
+| UAVSAR Postcards | Reference visual material, if it adds value | Optional |
+| CSA (RCM, RADARSAT-1, Python SAR tutorial) | Implementation reference; data only if needed | Optional |
+| CONAE SAOCOM | Complementary data with registration, only if it adds value | Optional |
 
-URLs oficiales en [docs/challenges/05-dancing-with-the-sars.md](challenges/05-dancing-with-the-sars.md).
+Official URLs in [docs/challenges/05-dancing-with-the-sars.md](challenges/05-dancing-with-the-sars.md).
 
-## Acceso y condiciones de uso
+## Access and use conditions
 
-- Descarga requiere **Earthdata Login** gratuito. Las credenciales permanecen fuera del navegador y del repositorio (ver `.gitignore`).
-- Condiciones de uso e información de versión registradas en el inventario del caso (Fase 0).
-- Los productos originales voluminosos no se suben al repositorio; solo capas derivadas optimizadas y el archivo analítico del paquete de caso.
+- Download requires a free **Earthdata Login**. Credentials stay outside the browser and the
+  repository (see `.gitignore`).
+- Use conditions and version information are registered in the case inventory (Phase 0).
+- Bulky original products are not committed; only optimized derived layers and the case
+  package's analytical file.
 
-## Condición crítica (HOLD)
+## Critical condition (HOLD)
 
-NISAR debe aparecer en una interacción sustantiva con datos reales, no como mención decorativa. Si no se localiza un caso NISAR adecuado, hay que revisar la admisibilidad del proyecto antes de continuar y no sustituir silenciosamente el sensor. La página oficial del reto no pudo recuperarse completa durante la preparación; las condiciones definitivas deben confirmarse en ella.
+NISAR must appear in a substantive interaction with real data, not as a decorative mention. If
+no suitable NISAR case is located, the project's admissibility must be reviewed before
+continuing, and the sensor must not be silently substituted.
 
-## Criterios de aceptación de un caso (§7)
+## Case acceptance criteria (§7)
 
-- Observaciones NISAR disponibles antes y durante la inundación, o mientras el agua siga siendo detectable.
-- Productos comparables en geometría y canales.
-- Zona pequeña y procesable en el tiempo del hackathon.
-- Cambio visual interpretable (preferiblemente agua abierta).
-- Alguna referencia dentro de los recursos permitidos para contrastar.
-- Condiciones de uso e información de versión registradas.
+- NISAR observations available before and during the flood, or while the water remains
+  detectable.
+- Products comparable in geometry and channels.
+- Small area, processable within hackathon time.
+- Interpretable visual change (preferably open water).
+- Some reference within the permitted resources for contrast.
+- Use conditions and version information registered.
 
-Si no hay una catástrofe bien documentada, el caso se presenta como **cambio hidrológico observado**, no como desastre reconstruido.
+If no well-documented catastrophe exists, the case is presented as **observed hydrological
+change**, not as a reconstructed disaster.
